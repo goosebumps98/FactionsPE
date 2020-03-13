@@ -132,7 +132,7 @@ class FactionsPE extends PluginBase {
 		Permissions::init();
 
 		# Register commands
-		$this->getServer()->getCommandMap()->register("faction", $fc = new FactionCommand($this));
+		$this->getServer()->getCommandMap()->register("gangs", $fc = new FactionCommand($this));
 
 		# Load form handler
 		$this->form = new FactionForm($this, $fc);
