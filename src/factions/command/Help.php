@@ -53,7 +53,7 @@ class Help extends Command {
 			$pageHeight = 5;
 		}
 
-		$main = $sender->getServer()->getCommandMap()->getCommand("faction");
+		$main = $sender->getServer()->getCommandMap()->getCommand("gang");
 		if ($command === "") {
 
 			$commands = [];
