@@ -35,30 +35,30 @@ use pocketmine\Player;
 class FactionCommand extends Command {
 
 	public function __construct(FactionsPE $plugin) {
-		parent::__construct($plugin, 'faction', 'Main Faction command', Permissions::MAIN, ['fac', 'f']);
+		parent::__construct($plugin, 'gang', 'Main Gang command', Permissions::MAIN, ['gan', 'g']);
 
 		// Registering subcommands
 		$childs = [
-			new Help($plugin, "help", "Show FactionsPE command help page", Permissions::HELP, ["?"]),
-			new CreateFaction($plugin, 'create', 'Create a new faction', Permissions::CREATE, ['make', 'new']),
-			new LeaveFaction($plugin, 'leave', 'Leave your current faction', Permissions::LEAVE, ['quit']),
-			new Invite($plugin, "invite", "Invite someone to your faction", Permissions::INVITE, ["inv"]),
-			new Join($plugin, "join", "Join to a faction", Permissions::JOIN),
+			new Help($plugin, "help", "Show Gangs command help page", Permissions::HELP, ["?"]),
+			new CreateFaction($plugin, 'create', 'Create a new gang', Permissions::CREATE, ['make', 'new']),
+			new LeaveFaction($plugin, 'leave', 'Leave your current gang', Permissions::LEAVE, ['quit']),
+			new Invite($plugin, "invite", "Invite someone to your gang", Permissions::INVITE, ["inv"]),
+			new Join($plugin, "join", "Join to a gang", Permissions::JOIN),
 			new Close($plugin, "close", "Allow only invited players to join", Permissions::CLOSE),
 			new Open($plugin, "open", "Let anyone join", Permissions::OPEN),
-			new Kick($plugin, "kick", "Kick a member from a faction", Permissions::KICK),
+			new Kick($plugin, "kick", "Kick a member from a gang", Permissions::KICK),
 			new Override($plugin, "admin", "Turn on overriding mode", Permissions::OVERRIDE, ["override"]),
-			new Map($plugin, "map", "Show Factions map", Permissions::MAP),
+			new Map($plugin, "map", "Show Gang Lands", Permissions::MAP),
 			new Claim($plugin, "claim", "Claim this plot", Permissions::CLAIM),
 			new Unclaim($plugin, "unclaim", "Unclaim this plot", Permissions::UNCLAIM),
-			new Home($plugin, "home", "Teleport to faction home", Permissions::HOME),
-			new SetHome($plugin, "sethome", "Set Faction home to your location", Permissions::SETHOME),
-			new Chat($plugin, "chat", "Toggle faction chat mode", Permissions::CHAT),
+			new Home($plugin, "home", "Teleport to Trap House", Permissions::HOME),
+			new SetHome($plugin, "sethome", "Set Trap House to your location", Permissions::SETHOME),
+			new Chat($plugin, "chat", "Toggle gang chat mode", Permissions::CHAT),
 			new Top($plugin, "top", "See top of most powerful factions", Permissions::TOP),
 			new PlayerCommand($plugin, "player", "See more detailed info about someone", Permissions::PLAYER),
 			new Perm($plugin, "permission", "Manage faction permissions", Permissions::PERM),
-			new Disband($plugin, "disband", "Disband a faction", Permissions::DISBAND, ["destroy"]),
-			new Status($plugin, "status", "Check members in the faction", Permissions::STATUS),
+			new Disband($plugin, "disband", "Disband a gang", Permissions::DISBAND, ["destroy"]),
+			new Status($plugin, "status", "Check members in the gang", Permissions::STATUS),
 			new ListCmd($plugin, "list", "See list of all created factions", Permissions::LIST),
 			new Reload($plugin, "reload", "Reload config file", Permissions::RELOAD),
 			new Rank($plugin, "rank", "Manage member ranks", Permissions::RANK),
@@ -66,11 +66,11 @@ class FactionCommand extends Command {
 			new HudSwitch($plugin, "hud", "Toggle HUD", Permissions::HUD),
 			new Power($plugin, "power", "Manage power", Permissions::POWERBOOST),
 			new Version($plugin, "version", "See current plugin version and information", Permissions::VERSION),
-			new Name($plugin, "name", "Rename faction", Permissions::NAME),
-			new Info($plugin, "info", "Get faction information", Permissions::INFO),
-			new Description($plugin, "description", "Set faction's description", Permissions::DESCRIPTION),
+			new Name($plugin, "name", "Rename gang", Permissions::NAME),
+			new Info($plugin, "info", "Get gang information", Permissions::INFO),
+			new Description($plugin, "description", "Set gang's description", Permissions::DESCRIPTION),
 			new SeeChunk($plugin, "seechunk", "See chunk borders", Permissions::SEECHUNK, ["sc", "border"]),
-			new FlagCommand($plugin, "flag", "Manage faction flags", Permissions::FLAG),
+			new FlagCommand($plugin, "flag", "Manage gang flags", Permissions::FLAG),
 			new RankQuickset($plugin, "promote", "Promote member to higher rank", Permissions::PROMOTE, ["+"]),
 			new RankQuickset($plugin, "demote", "Demote member to lower rank", Permissions::DEMOTE, ["-"])
 		];
@@ -117,7 +117,7 @@ class FactionCommand extends Command {
 	public function sendUsage( ? CommandSender $sender = null) {
 		$sender = $sender ?? $this->sender;
 		$sender->sendMessage(Localizer::trans("command-usage", [
-			"usage" => "/faction <sub-command>",
+			"usage" => "/gang <sub-command>",
 		]));
 		$sender->sendMessage(Localizer::trans("faction-command-tip", ["help" => $this->getChild("help")->getUsage()]));
 	}
