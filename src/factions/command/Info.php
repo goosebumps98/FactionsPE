@@ -69,13 +69,13 @@ class Info extends Command
             REL::TRUCE => $faction->getFactionsWhereRelation(REL::TRUCE),
             REL::ENEMY => $faction->getFactionsWhereRelation(REL::ENEMY)
         ];
-        $title = Text::titleize("Faction ".$member->getColorTo($faction).$faction->getName());
+        $title = Text::titleize("Gang ".$member->getColorTo($faction).$faction->getName());
 
         // Format and send
         $member->sendMessage($title);
-        $member->sendMessage(Text::parse("<gold>ID: <yellow>".$id));
+        $member->sendMessage(Text::parse("<gold>Gang: <yellow>".$id));
         $member->sendMessage(Text::parse("<gold>Description: <yellow>".$description));
-        $member->sendMessage(Text::parse("<gold>Age: <purple>".Text::time_elapsed($age)));
+        $member->sendMessage(Text::parse("<gold>Since: <purple>".Text::time_elapsed($age)));
         $member->sendMessage(Text::parse("<gold>Flags: ".$flags));
         $member->sendMessage(Text::parse("<gold>".implode(TextFormat::YELLOW." / ", array_keys($power)).": <yellow>".implode(TextFormat::YELLOW."/", array_values($power))));
         foreach ($relations as $rel => $factions) {
