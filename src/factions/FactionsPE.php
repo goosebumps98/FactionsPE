@@ -282,26 +282,7 @@ class FactionsPE extends PluginBase {
 				$this->getLogger()->info(Localizer::trans("economy-not-ready", ["name" => $this->economy->getName()]));
 			}
 		}
-		// If chat-formatter is set to false, then we assume that user is using PureChat
-		if (!$this->getConfig()->get("chat-formatter")) {
-			$pc = $this->getServer()->getPluginManager()->getPlugin("PureChat");
-			if ($pc !== null && $pc->isEnabled()) {
-				self::$engines["ChatEngine"]->setPureChat($pc);
-				$this->getLogger()->info(Localizer::trans("chat-formatter-set", [
-					"plugin" => "PureChat",
-				]));
-				$pc->loadFactionsPlugin();
-			} else {
-				$this->getLogger()->warning("PureChat not found! Safe fallback to built-in formatter");
-				goto fallback_formatter;
-			}
-		} else {
-			fallback_formatter:
-			$this->getLogger()->info(Localizer::trans("chat-formatter-set", [
-				"plugin" => $this->getName() !== $this->getName() ?: Localizer::trans('built-in'),
-			]));
-		}
-		if ($this->getConfig()->get('enable-form-menus', true)) {
+      if ($this->getConfig()->get('enable-form-menus', true)) {
 			$fapi = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
 			if ($fapi && $fapi->isEnabled()) {
 				$this->formAPI = $fapi;
@@ -375,7 +356,7 @@ class FactionsPE extends PluginBase {
 
 		// Now lets generate that data
 		$data = [];
-		$fc = $this->getServer()->getCommandMap()->getCommand("faction");
+		$fc = $this->getServer()->getCommandMap()->getCommand("gang");
 		if(!$fc) return;
 
 		$data = array_reverse($this->generateCommandInfoData($fc));
