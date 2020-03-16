@@ -116,7 +116,9 @@ class CombatEngine extends Engine
 
         $victim = $event->getEntity();
         $attacker = $event->getDamager();  
-        $mattacker = $attacker instanceof Player ? Members::get($attacker) : null;
+        if ($attacker instanceof Player){
+            $mattacker = Members::get($attacker);
+        }
         $mdefender = Members::get($victim);
         $defendFaction = $mdefender->getFaction();
         $attackFaction = $mattacker->getFaction(); # ERROR
