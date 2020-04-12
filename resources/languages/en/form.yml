@@ -1,18 +1,18 @@
 ---
-menu-title: "Gang Menu"
-button-create: "Create"
-button-map: "Map"
-button-description: "Set Description"
-button-commands: "See Commands"
-button-invite: "Invite"
-button-leave: "Leave"
-button-disband: "Disband"
-button-home: "Home"
-button-claim: "Claim"
+menu-title: "§bGang Menu"
+button-create: "§eCreate"
+button-map: "§eMap"
+button-description: "§eSet Description"
+button-commands: "§eSee Commands"
+button-invite: "§eInvite"
+button-leave: "§eLeave"
+button-disband: "§eDisband"
+button-home: "§bTrap House"
+button-claim: "§eRun §b§l/g claim"
 button-unclaim: "Unclaim"
 button-seechunk: "See Chunk"
 button-admin: "Toggle Overriding Mode {:_current={:current:}}"
-exit: "Exit"
+exit: "§cExit"
 
 # Generic
 select-player: "Select player"
@@ -20,8 +20,8 @@ button-yes: "<green>Yes"
 button-no: "<red>No"
 
 # Create Faction
-create-faction-form-title: "Create Faction"
-create-faction-form-content: "Choose a name for your new faction"
+create-faction-form-title: "§aEstablish Gang"
+create-faction-form-content: "Choose a name for your new gang"
 
 # Description
 description-form-title: "Description"
@@ -29,7 +29,7 @@ description-form-input: "New description"
 
 # Invite
 invite-form-title: "Invite"
-invite-form-content: "Invite new member to your faction"
+invite-form-content: "Invite new member to your gang"
 invite-form-input: "Enter player's name"
 invite-input-label: "Player"
 
@@ -37,5 +37,5 @@ invite-input-label: "Player"
 button-settings: "Settings"
 
 # Leave
-form-leave-are-u-sure: "<i>Are you sure you want to leave <aqua>:faction<i> faction"
+form-leave-are-u-sure: "<i>Are you sure you want to leave <aqua>:faction<i> gang"
 ...
