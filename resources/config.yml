@@ -54,7 +54,7 @@ purge-after: 604800
 gameplay:
   hud:
     enabled: true
-    popup: "》 Power: &6{POWER}&f/&6{MAXPOWER} &8|&f Money: &6{MU}{MONEY} &8|&f Faction: &6{FACTION} &8|&f Faction power: &6{F-POWER}&f/&6{MAXF-POWER}&f 《"
+    popup: "&eϾ &a Gang: &6{FACTION} &b֍ &e Gang Power: &6{F-POWER}&f/&6{MAXF-POWER} &eϿ"
     tip: null
   # These are messages you'll receive on certain events. They can be switched on/off
   log:
@@ -71,17 +71,17 @@ gameplay:
   power:
     player:
       # Maximum possible amount of power for player
-      max: 100
+      max: 250
       # Minimum possible amount of power for player
-      min: -100
+      min: -200
       # Power decrease per death
-      per-death: 5
+      per-death: 15
       # Power decrease per claim
-      per-claim: 5
+      per-claim: 10
       # How much power will player gain every update ?
-      per-update: 1
+      per-update: 3
       # Default power value for player
-      default: 10
+      default: 30
     # Power increase interval in minutes
     update-every: 10
     # Should power increase time by time ?
